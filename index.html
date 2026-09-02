@@ -1,22 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assests/style.css">
-    <title>LOGIN-CY</title>
-</head>
-<body>
-    <div class="main">
-        <p class="sign">SIGN IN </p>
-        <form  class="form-1">
-            <input type="text" class="user_Name" placeholder="UserName">
-            <input type="password" class="pass" placeholder="Password">
-            <a href="#" class="submit"> SIGN IN </a>
-            <P class="forgot"><a href="#">forgot password?</a></P>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Latch is an accessible, responsive authentication interface with complete interaction states.">
+    <meta name="theme-color" content="#0b1220">
+    <title>Latch — Sign in</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b1220'/%3E%3Cpath d='M21 17v30h25' fill='none' stroke='%236ef2c2' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='41' cy='23' r='6' fill='%23ffb86b'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="module" src="assets/js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#sign-in-title">Skip to sign in</a>
+
+    <main class="auth-shell">
+      <section class="brand-panel" aria-labelledby="brand-heading">
+        <a class="brand" href="./" aria-label="Latch home">
+          <svg aria-hidden="true" viewBox="0 0 48 48">
+            <path d="M13 8v32h25"></path>
+            <circle cx="34" cy="14" r="5"></circle>
+          </svg>
+          <span>Latch</span>
+        </a>
+
+        <div class="brand-copy">
+          <p class="eyebrow"><span></span> Protected workspace</p>
+          <h1 id="brand-heading">A calm threshold<br>for focused work.</h1>
+          <p>Sign in securely and return to the things that need your attention.</p>
+        </div>
+
+        <div class="signal-field" aria-hidden="true">
+          <span class="signal signal--one"></span>
+          <span class="signal signal--two"></span>
+          <span class="signal signal--three"></span>
+          <span class="signal-line"></span>
+        </div>
+
+        <div class="trust-note">
+          <span class="trust-note__mark" aria-hidden="true">✓</span>
+          <p><strong>Private by design</strong><br>This demonstration never sends or stores credentials.</p>
+        </div>
+      </section>
+
+      <section class="form-panel" aria-label="Account access">
+        <div class="form-wrap">
+          <div class="form-heading">
+            <p class="step-label">Account access <span>01 / 01</span></p>
+            <h2 id="sign-in-title">Welcome back</h2>
+            <p>Enter your account details to continue.</p>
+          </div>
+
+          <form id="sign-in-form" novalidate>
+            <div class="field-group">
+              <div class="label-row">
+                <label for="email">Email address</label>
+                <span class="field-meta">Required</span>
+              </div>
+              <div class="input-wrap">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+                <input id="email" name="email" type="email" inputmode="email" autocomplete="username" placeholder="name@example.com" aria-describedby="email-error" required>
+              </div>
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <div class="label-row">
+                <label for="password">Password</label>
+                <button class="inline-action" id="forgot-password" type="button">Forgot password?</button>
+              </div>
+              <div class="input-wrap">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" aria-describedby="password-hint password-error caps-warning" required>
+                <button class="reveal-button" id="toggle-password" type="button" aria-label="Show password" aria-pressed="false">
+                  <svg class="eye-open" aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                  <svg class="eye-closed" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 3 18 18M10.7 6.1A10.8 10.8 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-2.1 2.8M6.5 6.5C3.5 8.3 2 12 2 12s3.5 6 10 6c1 0 1.9-.1 2.7-.4"></path></svg>
+                </button>
+              </div>
+              <div class="field-support">
+                <p class="field-hint" id="password-hint">Use at least 8 characters.</p>
+                <p class="caps-warning" id="caps-warning" hidden>Caps Lock is on</p>
+              </div>
+              <p class="field-error" id="password-error" aria-live="polite"></p>
+            </div>
+
+            <label class="checkbox-row">
+              <input id="remember" name="remember" type="checkbox">
+              <span class="custom-checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"></path></svg></span>
+              <span>Keep me signed in on this device</span>
+            </label>
+
+            <div id="form-status" class="form-status" role="alert" tabindex="-1" hidden></div>
+
+            <button class="primary-button" id="submit-button" type="submit">
+              <span class="button-label">Sign in</span>
+              <span class="button-loader" aria-hidden="true"></span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </button>
+          </form>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <button class="secondary-button" id="passkey-button" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="9" r="5"></circle><path d="m13 13 8 8M16 16l2-2M18 18l2-2"></path></svg>
+            Use a passkey
+          </button>
+
+          <p class="demo-note">Interactive front-end demonstration. No account is required.</p>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="recovery-dialog" class="modal" aria-labelledby="recovery-title">
+      <div class="modal__content" id="recovery-form-view">
+        <button class="modal-close" type="button" aria-label="Close password recovery">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+        </button>
+        <span class="modal-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 2.3 5.6M4 17v-5h5"></path><path d="M12 8v4l2.5 1.5"></path></svg>
+        </span>
+        <p class="step-label">Account recovery</p>
+        <h2 id="recovery-title">Reset your password</h2>
+        <p>Enter your email address and we’ll prepare a recovery link.</p>
+        <form id="recovery-form" novalidate>
+          <div class="field-group">
+            <label for="recovery-email">Email address</label>
+            <div class="input-wrap">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+              <input id="recovery-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-describedby="recovery-error" required>
+            </div>
+            <p class="field-error" id="recovery-error" aria-live="polite"></p>
+          </div>
+          <button class="primary-button" type="submit">Prepare recovery link</button>
         </form>
-    </div>
-    
-</body>
+      </div>
+
+      <div class="modal__content modal__success" id="recovery-success-view" hidden>
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <p class="step-label">Check your inbox</p>
+        <h2>Recovery link prepared</h2>
+        <p id="recovery-confirmation"></p>
+        <button class="primary-button modal-done" type="button">Return to sign in</button>
+      </div>
+    </dialog>
+
+    <dialog id="success-dialog" class="modal modal--success" aria-labelledby="success-title">
+      <div class="modal__content modal__success">
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <p class="step-label">Access confirmed</p>
+        <h2 id="success-title">You’re signed in</h2>
+        <p>The interface completed the demonstration successfully. No credentials were transmitted.</p>
+        <button class="primary-button success-done" type="button">Restart demonstration</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>
