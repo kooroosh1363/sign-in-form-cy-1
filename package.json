@@ -1,0 +1,14 @@
+{
+  "name": "latch-authentication-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An accessible, responsive authentication interface with complete interaction states.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check assets/js/app.js && node --check assets/js/auth-demo.js && node --check assets/js/validation.js && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
